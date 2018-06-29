@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactFormComponent implements OnInit {
 
+  
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  log(firstName)
+  {
+       console.log(firstName);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+  }
+
+  commentLog(comment)
+  {
+    console.log(comment.value);
+  }
+  
 }

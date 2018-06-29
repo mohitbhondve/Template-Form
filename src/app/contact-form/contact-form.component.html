@@ -1,11 +1,42 @@
+
 <form>
     <div class="form-group">
-            <label for="firstName"> Name </label>
-            <input id = "firstName" type="text" class="form-control">
+        <label for="firstName">Name</label>
+        <input 
+             required
+             minlength="3" 
+             pattern="mohit"
+             ngModel name="firstName" 
+             type="text" 
+             #firstName="ngModel" 
+             id="firstName" 
+             (change)="log(firstName)" 
+             class="form-control">
+
+        <div class="alert alert-danger" 
+        *ngIf="firstName.touched && !firstName.valid">
+        <div *ngIf="firstName.errors.required">First Name is required</div>
+        <div *ngIf="firstName.errors.minlength">
+            value should be greater than {{firstName.errors.minlength.requiredLength}}</div>
+        <div *ngIf="firstName.errors.pattern">pattern doesn't match</div>
+
+        </div>
+
     </div>
-    
+
     <div class="form-group">
-         <label for="comment">Comment</label><br>
-                                                                                                                                                                                                                                                       <textarea  id="Comment" cols="110" rows="5"></textarea>
+        <label for="comment">Comment</label><br>
+        <textarea 
+            ngModel name="comment" 
+            id="comment" 
+            #comment = "ngModel"
+            (change)="commentLog(comment)" 
+            cols="30" rows="10">
+        </textarea>
+
     </div>
+
+    <button class="btn btn-primary">Submit</button>
+
+
 </form>
